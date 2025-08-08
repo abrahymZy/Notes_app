@@ -10,7 +10,9 @@ class NotesView extends StatelessWidget {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(children: [CustemAppBar(), NotesViewBody()]),
+        child: Column(
+          children: [CustemAppBar(), SizedBox(height: 10), NotesViewBody()],
+        ),
       ),
     );
   }
