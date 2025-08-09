@@ -14,10 +14,16 @@ class NotesView extends StatelessWidget {
           children: [
             SizedBox(height: 40),
             CustemAppBar(),
-            SizedBox(height: 10),
+            // SizedBox(height: 10),
             Expanded(child: NotesViewBody()),
           ],
         ),
+      ),
+
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: Colors.lightBlueAccent,
+        child: Icon(Icons.add, color: Colors.black),
       ),
     );
   }
