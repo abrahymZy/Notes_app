@@ -22,7 +22,7 @@ class NoteItem extends StatelessWidget {
             subtitle: Padding(
               padding: const EdgeInsets.only(top: 16, bottom: 16),
               child: Text(
-                "Bulid your career with ebra zy",
+                "Bulid your career with ebrahym ezzy",
                 style: TextStyle(
                   color: Colors.black.withAlpha(128),
                   fontSize: 18,
@@ -31,10 +31,9 @@ class NoteItem extends StatelessWidget {
             ),
             trailing: IconButton(
               onPressed: () {},
-              icon: Icon(FontAwesomeIcons.trash, color: Colors.black, size: 22),
+              icon: Icon(FontAwesomeIcons.trash, color: Colors.black, size: 20),
             ),
           ),
-          // Spacer(),
           Text(
             "May,2026",
             style: TextStyle(color: Colors.black.withAlpha(160), fontSize: 16),
