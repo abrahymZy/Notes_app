@@ -78,11 +78,17 @@ packages:
   font_awesome_flutter:
     dependency: "direct main"
     description:
-      name: font_awesome_flutter
-      sha256: f50ce90dbe26d977415b9540400d6778bef00894aced6358ae578abd92b14b10
-      url: "https://pub.dev"
-    source: hosted
+      path: "packages/font_awesome_flutter-10.9.0"
+      relative: true
+    source: path
     version: "10.9.0"
+  intl:
+    dependency: "direct main"
+    description:
+      path: "packages/intl-0.20.2"
+      relative: true
+    source: path
+    version: "0.20.2"
   leak_tracker:
     dependency: transitive
     description:
@@ -139,6 +145,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.16.0"
+  modal_progress_hud_nsn:
+    dependency: "direct main"
+    description:
+      path: "packages/modal_progress_hud_nsn-0.5.1"
+      relative: true
+    source: path
+    version: "0.5.1"
   path:
     dependency: transitive
     description:
