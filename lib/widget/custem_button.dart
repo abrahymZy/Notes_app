@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:notes_app/constant.dart';
 
 class CustemButton extends StatelessWidget {
-  const CustemButton({
-    super.key, this.onTap,
-  });
-final void Function()? onTap;
+  const CustemButton({super.key, this.onTap, this.isLoadin = false});
+  final void Function()? onTap;
+  final bool isLoadin;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -18,14 +17,16 @@ final void Function()? onTap;
           borderRadius: BorderRadius.circular(8),
         ),
         child: Center(
-          child: Text(
-            "Add",
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+          child: isLoadin
+              ? const CircularProgressIndicator(color: Colors.black)
+              : const Text(
+                  "Add",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
         ),
       ),
     );
