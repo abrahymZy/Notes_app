@@ -24,8 +24,7 @@ class _NotesListViewState extends State<NotesListView> {
   Widget build(BuildContext context) {
     return BlocBuilder<NotesCubit, NotesState>(
       builder: (context, state) {
-        List<NoteModel> notes =
-            BlocProvider.of<NotesCubit>(context).notes!;
+        List<NoteModel> notes = BlocProvider.of<NotesCubit>(context).notes!;
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 16.0),
           child: ListView.builder(
@@ -34,7 +33,7 @@ class _NotesListViewState extends State<NotesListView> {
             itemBuilder: (context, index) {
               return Padding(
                 padding: const EdgeInsets.only(bottom: 16.0),
-                child: NoteItem(color: colors[index % 3]),
+                child: NoteItem(note: notes[index]),
               );
             },
           ),
