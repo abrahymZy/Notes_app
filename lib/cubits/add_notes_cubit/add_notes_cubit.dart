@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:hive_flutter/hive_flutter.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:hive/hive.dart';
 import 'package:meta/meta.dart';
 import 'package:notes_app/constant.dart';
 import 'package:notes_app/models/note_model.dart';
