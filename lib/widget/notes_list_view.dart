@@ -3,7 +3,9 @@ import 'package:notes_app/widget/note_item.dart';
 
 class NotesListView extends StatelessWidget {
   const NotesListView({super.key});
+
   final colors = const [Color(0xffEAEB99), Color(0xffFFD07D), Colors.lightBlue];
+  
   @override
   Widget build(BuildContext context) {
     return Padding(
