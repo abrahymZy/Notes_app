@@ -6,16 +6,25 @@ class CustemTextField extends StatelessWidget {
     super.key,
     required this.hintText,
     this.maxLines = 1,
-    this.heightHintText = 1, this.onSaved,
+    this.heightHintText = 1,
+    this.onSaved,
+    this.hasBorder = true,
+    this.onChanged,
+    this.value,
   });
   final String hintText;
   final int maxLines;
   final double heightHintText;
   final void Function(String?)? onSaved;
+  final Function(String)? onChanged;
+  final bool hasBorder;
+  final String? value;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onChanged: onChanged,
       onSaved: onSaved,
+      initialValue: value,
       validator: (value) {
         if (value?.isEmpty ?? true) {
           return "This field is required";
@@ -29,9 +38,9 @@ class CustemTextField extends StatelessWidget {
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: TextStyle(color: kPrimaryColor, height: heightHintText),
-        border: buildBorder(kPrimaryColor),
-        enabledBorder: buildBorder(kPrimaryColor),
-        focusedBorder: buildBorder(kPrimaryColor),
+        border: hasBorder ? buildBorder(kPrimaryColor) : null,
+        enabledBorder: hasBorder ? buildBorder(kPrimaryColor) : null,
+        focusedBorder: hasBorder ? buildBorder(kPrimaryColor) : null,
       ),
     );
   }

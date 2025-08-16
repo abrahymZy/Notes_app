@@ -13,7 +13,14 @@ class NoteItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, EditNoteView.id);
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return EditNoteView(note: note);
+            },
+          ),
+        );
       },
       child: Container(
         padding: EdgeInsets.all(20),
@@ -32,6 +39,8 @@ class NoteItem extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 16, bottom: 16),
                 child: Text(
                   note.subTitle,
+                  maxLines: 3,
+                  overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     color: Colors.black.withAlpha(128),
                     fontSize: 18,

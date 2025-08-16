@@ -5,7 +5,6 @@ import 'package:notes_app/widget/notes_view_body.dart';
 
 class NotesView extends StatelessWidget {
   const NotesView({super.key});
-  static final id = "NotesView";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
