@@ -27,7 +27,7 @@ class CustemTextField extends StatelessWidget {
       initialValue: value,
       validator: (value) {
         if (value?.isEmpty ?? true) {
-          return "This field is required";
+          return "يجب إدخال $hintText ";
         } else {
           return null;
         }

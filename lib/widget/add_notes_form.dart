@@ -28,14 +28,14 @@ class _AddNotesFormState extends State<AddNotesForm> {
         children: [
           SizedBox(height: 16),
           CustemTextField(
-            hintText: "Title",
+            hintText: "العنوان ",
             onSaved: (value) {
               title = value;
             },
           ),
           SizedBox(height: 20),
           CustemTextField(
-            hintText: "Content",
+            hintText: "الملاحظات",
             maxLines: 5,
             onSaved: (value) {
               subTitle = value;
@@ -55,7 +55,7 @@ class _AddNotesFormState extends State<AddNotesForm> {
                       title: title!,
                       subTitle: subTitle!,
                       date: DateFormat("MMM dd, yyyy").format(DateTime.now()),
-                      color: Colors.blue.value,
+                      color: Colors.blue.hashCode,
                     );
                     BlocProvider.of<AddNotesCubit>(context).addNote(note);
                   } else {

@@ -13,7 +13,7 @@ class NotesView extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: 60),
-            CustemAppBar(title: "Notes", icon: Icons.search),
+            CustemAppBar(title: "الملاحظات", icon: Icons.search),
             Expanded(child: NotesViewBody()),
           ],
         ),

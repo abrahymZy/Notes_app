@@ -50,9 +50,33 @@ class NoteItem extends StatelessWidget {
               trailing: IconButton(
                 padding: EdgeInsets.only(bottom: 32),
                 onPressed: () {
-                  note.delete();
-
-                  BlocProvider.of<NotesCubit>(context).fetchAllNotes();
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        title: Text("حذف الملاحظة"),
+                        content: Text("هل أنت متأكد من حذف هذه الملاحظة؟"),
+                        actions: [
+                          TextButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: Text("إلغاء"),
+                          ),
+                          TextButton(
+                            onPressed: () {
+                              note.delete();
+                              BlocProvider.of<NotesCubit>(
+                                context,
+                              ).fetchAllNotes();
+                              Navigator.pop(context);
+                            },
+                            child: Text("حذف"),
+                          ),
+                        ],
+                      );
+                    },
+                  );
                 },
                 icon: Icon(
                   FontAwesomeIcons.trash,

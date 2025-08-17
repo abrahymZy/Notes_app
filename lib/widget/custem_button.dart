@@ -20,7 +20,7 @@ class CustemButton extends StatelessWidget {
           child: isLoadin
               ? const CircularProgressIndicator(color: Colors.black)
               : const Text(
-                  "Add",
+                  "إضافة",
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 22,

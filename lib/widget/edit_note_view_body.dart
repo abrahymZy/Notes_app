@@ -4,6 +4,7 @@ import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/widget/custem_app_bar.dart';
 import 'package:notes_app/widget/custem_text_field.dart';
+import 'package:notes_app/widget/edit_color_list_view.dart';
 
 class EditNoteViewBody extends StatefulWidget {
   const EditNoteViewBody({super.key, required this.note});
@@ -30,7 +31,7 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
           children: [
             SizedBox(height: 60),
             CustemAppBar(
-              title: "Edit Note",
+              title: "تعديل الملاحظة",
               icon: Icons.check,
               onPressed: () {
                 widget.note.title = title ?? widget.note.title;
@@ -45,7 +46,7 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
             SizedBox(height: 50),
             CustemTextField(
               value: widget.note.title,
-              hintText: "Title",
+              hintText: "العنوان",
               hasBorder: false,
               onChanged: (value) {
                 title = value;
@@ -54,13 +55,15 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
             SizedBox(height: 16),
             CustemTextField(
               value: widget.note.subTitle,
-              hintText: "Contant",
-              maxLines: 25,
+              hintText: "الملاحظات",
+              maxLines: 20,
               hasBorder: false,
               onChanged: (value) {
                 subTitle = value;
               },
             ),
+            SizedBox(height: 16),
+            EditColorListView(note: widget.note),
           ],
         ),
       ),
