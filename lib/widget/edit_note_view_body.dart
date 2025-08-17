@@ -15,7 +15,6 @@ class EditNoteViewBody extends StatefulWidget {
 
 class _EditNoteViewBodyState extends State<EditNoteViewBody> {
   String? title;
-
   String? subTitle;
 
   @override
